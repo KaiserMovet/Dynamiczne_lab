@@ -202,7 +202,7 @@ function fileValidator(pole_id, poleError_id) {
     }
 }
 
-function makeRow(all_data){
+function makeRow(all_data) {
     row = "<tr>";
     row += "<td>" + all_data["name"] + "</td>";
     row += "<td>" + all_data["code"] + "</td>";
@@ -217,7 +217,7 @@ function makeRow(all_data){
     return row;
 }
 
-function prepareData(){
+function prepareData() {
     all_data = {};
     all_data["name"] = document.getElementById("inputName").value;
     all_data["code"] = document.getElementById("inputCode").value;
@@ -225,25 +225,25 @@ function prepareData(){
     all_data["vat"] = document.getElementById("inputVat").value;
     all_data["brutto"] = document.getElementById("inputPrice2").value;
     all_data["category"] = document.getElementById("inputCategories").value;
-    
+
     options = "";
     var option_var = document.getElementById("inputOption");
     for (i = 0; i < option_var.children.length; i++) {
-        if(option_var.children[i].children[0].checked){
-            options += (i+1);
+        if (option_var.children[i].children[0].checked) {
+            options += (i + 1);
         }
     }
-    
+
     all_data["options"] = options;
-    
-    
+
+
     var rate_var = document.getElementById("inputRate");
     rate = "";
     for (i = 0; i < rate_var.children.length; i++) {
         console.log(rate_var.children[i])
-        if(rate_var.children[i].children[0].checked){
-           rate = (i+1)
-           break;
+        if (rate_var.children[i].children[0].checked) {
+            rate = (i + 1)
+            break;
         }
     }
     console.log(rate);
@@ -258,10 +258,20 @@ function prepareData(){
 function addData() {
     var t = $('#myTable');
     console.log(bool_dict)
-    
+
     row = makeRow(prepareData())
     t.find('tbody').append(row)
-      .trigger('addRows', [row, resort]);
+        .trigger('addRows', [row, resort]);
     return false;
 
-} 
+}
+
+
+function sortTable(row_number) {
+    $("#myTable").tablesorter({
+        // sort on the first column and second column in ascending order
+        sortList: [[0, 0]]
+    });
+
+
+}

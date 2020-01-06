@@ -12,15 +12,15 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <!-- choose a theme file -->
-        <link rel="stylesheet" href="css/theme.ice.css">
-        <!-- load jQuery and tablesorter scripts -->
-        <script type="text/javascript" src="js/jquery.tablesorter.js"></script>
-        
-        <!-- tablesorter widgets (optional) -->
-        <script type="text/javascript" src="js/jquery.tablesorter.widgets.js"></script>
-        <script src="js/validator.js"></script>
-        <script type="text/javascript">
+    <!-- choose a theme file -->
+    <link rel="stylesheet" href="css/theme.ice.css">
+    <!-- load jQuery and tablesorter scripts -->
+    <script type="text/javascript" src="js/jquery.tablesorter.js"></script>
+
+    <!-- tablesorter widgets (optional) -->
+    <script type="text/javascript" src="js/jquery.tablesorter.widgets.js"></script>
+    <script src="js/validator.js"></script>
+    <script type="text/javascript">
         $(function () {
             $("#myTable").tablesorter();
         });</script>
@@ -223,11 +223,24 @@
                                 </div>
                                 <div class="form-group row ">
                                     <div class="col-md-12 text-center ">
-                                        <button type="button" id="submitBut" class="btn btn-primary" onclick="addData()">Dodaj</button>
+                                        <button type="button" id="submitBut" class="btn btn-primary"
+                                            onclick="addData()">Dodaj</button>
                                     </div>
                                 </div>
                             </form>
-                            <table id="myTable" class="tablesorter tablesorter-ice">
+                            <div class="form-group row ">
+                                <div class="col-md-12 text-center ">
+                                    <button type="button" id="submitBut" class="btn btn-primary"
+                                        onclick="sortTable(0)">Nazwa</button>
+                                    <button type="button" id="submitBut" class="btn btn-primary"
+                                        onclick="addData()">Kod</button>
+                                    <button type="button" id="submitBut" class="btn btn-primary"
+                                        onclick="addData()">Cena</button>
+                                    <button type="button" id="submitBut" class="btn btn-primary"
+                                        onclick="addData()">Ocena</button>
+                                </div>
+                            </div>
+                            <table id="myTable" class="tablesorter tablesorter-ice ">
                                 <thead>
                                     <tr>
                                         <th>Nazwa Towaru</th>
@@ -244,24 +257,24 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                 
+
                                 </tbody>
                             </table>
-                        </div>
+                            <!-- </div> -->
 
-                        <div class="col-12 col-md-4 col-xl-4 ">
-                            <h1 class="mt-5"></h1>
-                            <div class="card" style="width: 18rem;">
-                                <img src="user.png" class="card-img-top" alt="Responsive image">
-                                <div class="card-body">
-                                    <h5 class="card-title">
-                                        <p class="text-primary">Imie i Nazwisko</p>
-                                    </h5>
+                            <div class="col-12 col-md-4 col-xl-4 ">
+                                <h1 class="mt-5"></h1>
+                                <div class="card" style="width: 18rem;">
+                                    <img src="user.png" class="card-img-top" alt="Responsive image">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <p class="text-primary">Imie i Nazwisko</p>
+                                        </h5>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
             </main>
 
